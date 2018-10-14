@@ -34,7 +34,7 @@ public class Tests {
                 //writer.print(fun + ", ");
                 //writer.print(lib + ", ");
                 writer.print(x + ",");
-                writer.print(Math.abs(diff) + ",");
+                writer.print(Math.abs(diff));
                 writer.println();
             }
         }

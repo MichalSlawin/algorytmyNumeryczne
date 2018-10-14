@@ -37,4 +37,8 @@ bin
 *.bak
 
 #My files
-output*.txt
+output*.csv
+*.png
+wykres.py
+sprawozdanie.*
+.odt#
