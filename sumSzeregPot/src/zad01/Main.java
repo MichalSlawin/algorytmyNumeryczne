@@ -6,12 +6,12 @@ package zad01;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(taylorSeries(0.5, 33));
+        System.out.println(taylorSeries1(0.5, 33));
     }
 
     //funkcja sin(x)*ln(1+x)
     //wzory wziete z http://people.math.sc.edu/girardi/m142/handouts/10sTaylorPolySeries.pdf
-    private static double taylorSeries(double x, int sumElems) {
+    private static double taylorSeries1(double x, int sumElems) {
         double lnResult = 0;
         double sinResult = 0;
 
