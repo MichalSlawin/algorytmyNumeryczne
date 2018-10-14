@@ -8,7 +8,7 @@ import static zad01.Main.*;
 
 public class Tests {
 
-    protected static void taylorTest(String fileName, int algNumber) {
+    protected static void taylorTest(String fileName, int algNumber, int sumElems) {
         PrintWriter writer = null;
 
         try {
@@ -21,19 +21,20 @@ public class Tests {
 
         for(double x = -0.999999; x <= 1; x += 0.000001) {
 
-            if(algNumber == 1) fun = taylorSeries1(x, 30);
-            else if(algNumber == 2) fun = taylorSeries2(x, 30);
-            else if(algNumber == 3) fun = taylorSeries3(x, 30);
-            else if(algNumber == 4) fun = taylorSeries4(x, 30);
+            if(algNumber == 1) fun = taylorSeries1(x, sumElems);
+            else if(algNumber == 2) fun = taylorSeries2(x, sumElems);
+            else if(algNumber == 3) fun = taylorSeries3(x, sumElems);
+            else if(algNumber == 4) fun = taylorSeries4(x, sumElems);
             else fun = 0;
 
             lib = Math.sin(x) * Math.log(1 + x);
             diff = fun - lib;
 
             if (writer != null) {
-                writer.print("fun: " + fun);
-                writer.print(" lib: " + lib);
-                writer.print(" diff:" + diff);
+                //writer.print(fun + ", ");
+                //writer.print(lib + ", ");
+                writer.print(x + ",");
+                writer.print(Math.abs(diff) + ",");
                 writer.println();
             }
         }

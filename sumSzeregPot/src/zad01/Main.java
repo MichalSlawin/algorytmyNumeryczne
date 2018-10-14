@@ -10,10 +10,15 @@ import static zad01.Tests.*;
 public class Main {
 
     public static void main(String[] args) {
-        taylorTest("output1.txt", 1);
-        taylorTest("output2.txt", 2);
-        taylorTest("output3.txt", 3);
-        taylorTest("output4.txt", 4);
+        taylorTest("output1.txt", 1, 30);
+        taylorTest("output2.txt", 2, 30);
+        taylorTest("output3.txt", 3, 30);
+        taylorTest("output4.txt", 4, 30);
+
+        taylorTest("output1_15.txt", 1, 15);
+        taylorTest("output2_15.txt", 2, 15);
+        taylorTest("output3_15.txt", 3, 15);
+        taylorTest("output4_15.txt", 4, 15);
     }
 
     //funkcja sin(x)*ln(1+x); -1 < x <= 1
