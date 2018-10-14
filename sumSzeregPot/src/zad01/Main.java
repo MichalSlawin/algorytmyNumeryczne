@@ -3,19 +3,34 @@
 
 package zad01;
 
+import static zad01.Tests.*;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(taylorSeries1(0.5, 33));
+        taylorTest();
     }
 
-    //funkcja sin(x)*ln(1+x)
+    //funkcja sin(x)*ln(1+x); -1 < x <= 1
     //wzory wziete z http://people.math.sc.edu/girardi/m142/handouts/10sTaylorPolySeries.pdf
-    private static double taylorSeries1(double x, int sumElems) {
+
+    //bezpośrednio ze wzoru Taylora, od początku
+    protected static double taylorSeries1(double x, int sumElems) {
         double lnResult = 0;
         double sinResult = 0;
 
         for(int n=1; n<=sumElems; n++) {
+            lnResult += (power(-1, n+1)*power(x, n))/n;
+            sinResult += (power(-1, n-1)*power(x, (2*n)-1))/factorial((2*n)-1);
+        }
+        return lnResult*sinResult;
+    }
+
+    //bezpośrednio ze wzoru Taylora, od końca
+    protected static double taylorSeries2(double x, int sumElems) {
+        double lnResult = 0;
+        double sinResult = 0;
+
+        for(int n=sumElems; n>=1; n--) {
             lnResult += (power(-1, n+1)*power(x, n))/n;
             sinResult += (power(-1, n-1)*power(x, (2*n)-1))/factorial((2*n)-1);
         }
